@@ -1,0 +1,159 @@
+body{
+    background-color:black
+}
+
+.frame{
+    margin:30px 100px;
+}
+
+footer{
+    margin:30px 50px;
+    display:flex;
+    justify-content:right;
+    border-top:2px solid whitesmoke;
+}
+
+.hello, .dday, .menu, .en{
+    margin-top:40px;
+    margin-bottom:120px;
+}
+
+.hello{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.dday{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
+}
+
+.menu{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    gap: 8px;
+}
+
+.en{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
+}
+
+#todayen{
+    font-size:40px;
+    font-family: "IBM Plex Sans KR", sans-serif;
+    color:whitesmoke;
+}
+
+#smallen{
+    font-size:20px;
+    font-family: "IBM Plex Sans KR", sans-serif;
+    color:whitesmoke;
+    letter-spacing: 10px;
+    margin-bottom:0px;
+}
+
+nav{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    margin:30px 50px;
+    gap:5px;
+    border-bottom:2px solid whitesmoke;
+}
+/*부모요소에 gap을 주면 자식들 사이 간격이 생김*/
+
+.menutime{
+    margin-top:0px;
+}
+
+#breakfast, #lunch, #dinner{
+    color:whitesmoke;
+    font-family: "IBM Plex Sans KR", sans-serif;
+}
+
+.dday{
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+    justify-content:center;
+    margin:30px 450px;
+}
+
+
+h1,h2,h3,h4,h5,p{
+    color:whitesmoke;
+    font-family: "IBM Plex Sans KR", sans-serif
+}
+
+h1, h2, h3, h4, h5{
+    margin-bottom:5px
+}
+
+
+#ddayd{
+    display:inline;
+    font-size: 60px;
+    font-family: "IBM Plex Sans KR", sans-serif;
+    letter-spacing: 15px;
+    background-color:whitesmoke;
+    margin-bottom: 120px;
+}
+
+#ddaym{
+    display:inline;
+    font-size: 20px;
+    letter-spacing: 10px;
+    margin-bottom:0px;
+    font-family: "IBM Plex Sans KR", sans-serif;
+    background-color:whitesmoke;
+}
+
+p{
+    margin-top:2px;
+}
+
+.intro{
+    text-align:center;
+}
+
+.big{
+    font-size: 38px;
+    text-decoration:underline solid whitesmoke;
+}
+
+.Sobig{
+    font-size:43px;
+}
+
+
+
+a{
+    color:whitesmoke;
+    text-decoration:none;
+}
+
+a:hover{
+    color:gray;
+}
+
+button{
+    background-color:whitesmoke;
+    color:black;
+    font-family: "IBM Plex Sans KR", sans-serif;
+    border:0px;
+}
+
+button:hover{
+    background-color:black;
+    color:whitesmoke;
+    transition:0.2s;
+}
+
+/*https://fonts.google.com/specimen/Chiron+GoRound+TC?lang=ko_Kore&preview.lang=ko_Kore*/

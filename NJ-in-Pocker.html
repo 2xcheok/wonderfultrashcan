@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 NiP</title>
+    <link rel="stylesheet" href="NiP.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&family=IBM+Plex+Sans+KR&family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.2/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.7.2/core.js"></script>
+</head>
+<body>
+    <py-config type="json">
+        {
+            "packages": ["python-dateutil", "requests", "beautifulsoup4" ]
+        }
+    </py-config>
+
+        <nav class="navigator">
+            <h3 class="nav">NiP</h3>
+            <ul>
+                <li class="menunav"><a class="nav" href="info.html">INFO</a></li>
+                <li class="menunav"><a class="nav" href="https://docs.google.com/forms/d/e/1FAIpQLSdMDmJVqoZQev-Z2jrUTizumZaYQ9FvtBqE8ykndoC9UR2AVw/viewform?usp=header">FEEDBACK</a></li>
+            </ul>
+        </nav>
+
+
+    <div class="frame"></div>
+        <div class="hello">
+            <h1 class="Sobig">Hello, Neungju!</h1>
+            <p class="intro">페이지에 방문하신 여러분을 진심으로 환영합니다.<br>
+            NiP가 처음인 여러분을 위해 간단한 소개글을 작성했으니 확인해 보세요!</p>
+            <a href="info.html"><button>What is NiP?</button></a>
+        </div>
+
+        <div class="dday">
+            <div id="ddaym"></div>
+            <div id="ddayd"></div>
+            <script type="py">
+                import datetime
+                from dateutil.relativedelta import relativedelta
+                from pyscript import document
+                #------------------------------------
+                SN = datetime.date(2026, 11, 19)  # 수능
+                TD = datetime.date.today()  # 오늘
+
+                diff = relativedelta(SN, TD)
+                daydday = SN-TD
+
+                ddaym = str(diff.months) + "개월" + str(diff.days) + "일"
+                ddayd = "D-" + str(daydday.days)
+
+                document.querySelector("#ddayd").innerHTML = ddayd
+                document.querySelector("#ddaym").innerHTML = ddaym
+            </script>
+        </div>
+
+        <div class="en">
+            <p id="smallen">오늘의 영어단어</p>
+            <div id="todayen"></div>
+            <script type="py">
+                from pyscript import document
+                import random
+                #-------------------------------
+                eng=['latitude: 자유', 'inundate: 감당하지 못할 정도로 주다', 'sesame: 참깨', 'jawbreaker: 알사탕', 'downright: 매우', 'handover: 인도하다', 'allegorically: 비유적으로']
+
+                todayen = random.choice(eng)
+
+                document.querySelector("#todayen").innerHTML = todayen
+            </script>
+        </div>
+
+        <div class="menu">
+            <h2 class="menutime">조식</h2>
+            <div id="breakfast"></div>
+            <h2 class="menutime">중식</h2>
+            <div id="lunch"></div>
+            <h2 class="menutime">석식</h2>
+            <div id="dinner"></div>  
+            <script type="py">
+                import requests
+                from bs4 import BeautifulSoup
+                from bs4 import XMLParsedAsHTMLWarning
+                import warnings
+                import datetime
+                from pyscript import document
+                warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
+
+                response = requests.get("https://open.neis.go.kr/hub/mealServiceDietInfo?KEY=cb2606337a0441a7acbbbb5a3f2e9221&ATPT_OFCDC_SC_CODE=Q10&SD_SCHUL_CODE=7140232&MLSV_FROM_YMD=20260720&MLSV_TO_YMD=20260724")
+                # print(response.status_code)
+
+                html = response.text
+                soup = BeautifulSoup(html, 'html.parser')
+                식단 = soup.select('DDISH_NM')
+                today = datetime.datetime.today().weekday()
+
+                a=today
+                # 0부터 월요일
+
+                none=""
+                
+                if a <= 4: 
+                    b=a+5
+                    c=b+5
+
+                    breakfast=식단[a].text
+                    lunch=식단[b].text
+                    dinner=식단[c].text
+
+                    document.querySelector("#breakfast").innerHTML = breakfast
+                    document.querySelector("#lunch").innerHTML = lunch
+                    document.querySelector("#dinner").innerHTML = dinner
+                else: 
+                    document.querySelector("#breakfast").innerHTML = none
+                    document.querySelector("#lunch").innerHTML = none
+                    document.querySelector("#dinner").innerHTML = none
+
+                # 28~30설명: https://developer.mozilla.org/ko/docs/Web/API/Element/innerHTML
+            </script>
+        </div>
+
+        <footer>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdMDmJVqoZQev-Z2jrUTizumZaYQ9FvtBqE8ykndoC9UR2AVw/viewform?usp=header"><br>문의사항 및 피드백</a>
+        </footer>
+    </div>
+    
+</body>
+</html>
