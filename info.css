@@ -73,10 +73,7 @@ nav{
     margin-top:0px;
 }
 
-#breakfast, #lunch, #dinner{
-    color:whitesmoke;
-    font-family: "IBM Plex Sans KR", sans-serif;
-}
+
 
 h1,h2,h3,h4,h5,p{
     color:whitesmoke;
@@ -102,6 +99,11 @@ h1, h2, h3, h4, h5{
     margin-bottom:0px;
     font-family: "IBM Plex Sans KR", sans-serif;
     color:whitesmoke;
+}
+
+#breakfast, #lunch, #dinner{
+    color:whitesmoke;
+    font-family: "IBM Plex Sans KR", sans-serif;
 }
 
 p{
