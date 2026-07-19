@@ -27,8 +27,9 @@ footer{
 .dday{
     display:flex;
     flex-direction:column;
-    justify-content:center;
     text-align:center;
+    justify-content:center;
+    margin:30px 450px;
 }
 
 .menu{
@@ -90,8 +91,8 @@ h1, h2, h3, h4, h5{
     font-size: 60px;
     font-family: "IBM Plex Sans KR", sans-serif;
     letter-spacing: 15px;
-    backgroung-color:whitesmoke;
-    margin-bottom:0px;
+    background-color:whitesmoke;
+    margin-bottom: 120px;
 }
 
 #ddaym{
