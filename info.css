@@ -13,7 +13,7 @@ footer{
     border-top:2px solid whitesmoke;
 }
 
-.hello, .dday, .en{
+.hello, .dday, .menu, .en{
     margin-top:40px;
     margin-bottom:120px;
 }
@@ -27,16 +27,15 @@ footer{
 .dday{
     display:flex;
     flex-direction:column;
-    text-align:center;
     justify-content:center;
-    margin:30px 450px;
+    text-align:center;
 }
 
 .menu{
     display:flex;
-    flex-direction:column;
+    flex-direction:row;
     justify-content:center;
-    text-align:center;
+    gap: 8px;
 }
 
 .en{
@@ -47,7 +46,7 @@ footer{
 }
 
 #todayen{
-    font-size:30px;
+    font-size:40px;
     font-family: "IBM Plex Sans KR", sans-serif;
     color:whitesmoke;
 }
@@ -74,6 +73,18 @@ nav{
     margin-top:0px;
 }
 
+#breakfast, #lunch, #dinner{
+    color:whitesmoke;
+    font-family: "IBM Plex Sans KR", sans-serif;
+}
+
+.dday{
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+    justify-content:center;
+    margin:30px 450px;
+}
 
 
 h1,h2,h3,h4,h5,p{
@@ -102,11 +113,6 @@ h1, h2, h3, h4, h5{
     margin-bottom:0px;
     font-family: "IBM Plex Sans KR", sans-serif;
     background-color:whitesmoke;
-}
-
-#breakfast, #lunch, #dinner{
-    color:whitesmoke;
-    font-family: "IBM Plex Sans KR", sans-serif;
 }
 
 p{
