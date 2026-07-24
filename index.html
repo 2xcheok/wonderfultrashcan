@@ -97,14 +97,13 @@
                 today = datetime.datetime.today().weekday()
 
                 a=today
+                b=a+5
+                c=b+5
                 # 0부터 월요일
 
                 none=""
                 
-                if a <= 4: 
-                    b=a+5
-                    c=b+5
-
+                if a < 4:
                     breakfast=식단[a].text
                     lunch=식단[b].text
                     dinner=식단[c].text
