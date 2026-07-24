@@ -14,7 +14,7 @@
 <body>
     <py-config type="json">
         {
-            "packages": ["python-dateutil", "requests", "beautifulsoup4" ]
+            "packages": ["python-dateutil", "requests", "beautifulsoup4", "pandas"]
         }
     </py-config>
 
@@ -126,6 +126,24 @@
                     document.querySelector("#dinner").innerHTML = none
 
                 # 28~30설명: https://developer.mozilla.org/ko/docs/Web/API/Element/innerHTML
+            </script>
+        </div>
+
+        <div class="plan">
+            <script type="py">
+            import pandas as pd
+            import calendar
+
+            ksy = pd.read_csv('7.csv')
+            
+            caltext = list(calendar.Calendar().itermonthdays(2026, 7))
+            
+            for n in range (0, 31): 
+                    caltext[n+2]=str(caltext[n+2]) + '. ' + str(ksy.iat[n,9])
+            
+            for i in range(2,33):
+                    print(caltext[i])
+
             </script>
         </div>
 
