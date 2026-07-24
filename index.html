@@ -93,7 +93,7 @@
 
                 html = response.text
                 soup = BeautifulSoup(html, 'html.parser')
-                식단 = soup.select('DDISH_NM')
+                식단 = soup.select('ddish_nm')
                 today = datetime.datetime.today().weekday()
 
                 a=today
